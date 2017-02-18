@@ -3,9 +3,6 @@
  * www.exilemod.com
  */
 
-ExileRouletteChairs = [];
-ExileRouletteChairPositions = [];
-
 // 957 Vehicles
 private _vehicles = [
 ["Land_BagBunker_Tower_F", [6727.5, 14182.6, 333.389], [-0.99834, 0.0575887, 0], [0, 0, 1], true],
