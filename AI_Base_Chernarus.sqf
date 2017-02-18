@@ -1,11 +1,16 @@
 /*
 	"Ai Base" v1.0 DMS static mission for Chernarus.
-	Created by Riker using templates by eraser1 with mission code layout and features inspired by mission files from [CiC]red_ned.
+	Created by Riker using templates by eraser1 with mission code layout and features inspired by mission files from [CiC]red_ned. Thanks guys!
 	
-	This is intended to be a mission completed by a team of and has great rewards for completing it, especially at the high end.
+	This is intended to be a mission completed by a team of 3+ on a militarised server and has great rewards for completing it that are highly customisable, especially at the high end.
 	Base design and location was inspired by an old ARMA 2 Overpoch server run by B-Zerk. To B-Zerk (if you ever see this) Thanks for the good times!
+	
+	The mission also has 2 roaming AI vehicles that do not use the standard DMS mission armed vehicles list, this allows for the selection of much harder vehicles for this mission if you wish.
 */
 
+/////////////////////////////////////////////
+// Variable Declarations & Array configs
+/////////////////////////////////////////////
 private ["_pos", "_AICount", "_AIMaxReinforcements", "_AItrigger", "_AIwave", "_AIdelay", "_staticguns", "_missionObjs", "_crate0", "_crate1", "_crate2", "_crate3", "_crate4", "_crate_loot_values0", "_crate_loot_values1", "_crate_loot_values2", "_crate_loot_values3", "_crate_loot_values4", "_crate_weapons0", "_crate_weapons1", "_crate_weapons2", "_crate_weapons3", "_crate_weapons4", "_crate_items0", "_crate_items1", "_crate_items2", "_crate_items3", "_crate_items4", "_crate_backpacks0", "_crate_backpacks1", "_crate_backpacks2", "_crate_backpacks3", "_crate_backpacks4", "_difficultyM", "_difficulty", "_PossibleDifficulty", "_msgWIN", "_veh", "_veh1", "_veh2", "_crate1_item_list", "_crate1_weapon_list", "_crate3_Item_List", "_crate4_item_list", "_ai_vehicle_list", "_ai_vehicle_0", "_ai_vehicle_1", "_crate4_position_list", "_crate4_position"];
 
 // For logging purposes
@@ -14,16 +19,42 @@ _num = DMS_MissionCount;
 // Set mission side (only "bandit" is supported for now)
 _side = "bandit";
 
+// Mission position (don't change this, all AI are at hardcoded locations)
 _pos = [6571,14167,0];
 
 if ([_pos,DMS_StaticMinPlayerDistance] call DMS_fnc_IsPlayerNearby) exitWith {"delay"};
 
-//create possible difficulty add more of one difficulty to weight it towards that. If testing, comment this section out and uncomment the forced easy mode
+// Armed Roaming Vehicle Options for DMS to choose from (this is an override to allow you to specify harder vehicles and includes things like armed Striders and Gorgons by default)
+_ai_vehicle_list = 
+[
+	"CUP_B_LR_Special_CZ_W",
+	"CUP_B_HMMWV_Crows_MK19_USA",
+	"CUP_O_GAZ_Vodnik_BPPU_RU",
+	"CUP_B_HMMWV_M2_GPK_USA",
+	"CUP_B_HMMWV_DSHKM_GPK_ACR",
+	"CUP_B_HMMWV_Crows_MK19_USA",
+	"CUP_O_GAZ_Vodnik_BPPU_RU",
+	"CUP_B_HMMWV_M2_GPK_USA",
+	"CUP_B_HMMWV_DSHKM_GPK_ACR",
+	"Exile_Car_Offroad_Armed_Guerilla01",
+	"Exile_Car_SUV_Armed_Black",
+	"O_MRAP_02_hmg_F",
+	"O_MRAP_02_hmg_F",
+	"B_MRAP_01_hmg_F",
+	"I_MRAP_03_hmg_F",
+	"O_APC_Wheeled_02_rcws_F",
+	"I_APC_Wheeled_03_cannon_F",
+	"B_APC_Wheeled_01_cannon_F"
+];
+
+// create possible difficulty add more of one difficulty to weight it towards that. If testing, comment this section out and uncomment the forced easy mode below.
 _PossibleDifficulty		= 	[	
 								"moderate",
-								"difficult",
-								"difficult",
-								"hardcore"
+								"moderate",
+								"moderate",
+								"difficult"
+								//"difficult",
+								//"hardcore"
 							];
 //choose mission difficulty and set value and is also marker colour
 _difficultyM = selectRandom _PossibleDifficulty;
@@ -31,6 +62,20 @@ _difficultyM = selectRandom _PossibleDifficulty;
 // FOR TESTING ONLY, SETS DIFFICULTY TO EASY WITH MINIMAL AI
 // _difficultyM = "easy";
 
+// Define the Speciality Crate Item Lists
+// Crate 1 is intended to be Sniper Rifles, Crate 3 is the one in the medical area and Crate 4 is the randomly placed one so was intended to have specialty gear in it.
+// Note that these arrays are just there as a possible list of items, the mission picks a random selection from these lists each time.
+
+_crate1_weapon_list	= ["CUP_srifle_M110","CUP_srifle_AWM_wdl","CUP_srifle_M107_Base","srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_LRR_camo_F"];
+_crate1_item_list	= ["CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_10Rnd_127x99_m107","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110"];
+_crate3_Item_List	= ["Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin"];
+_crate4_weapon_list	= ["CUP_hgun_MicroUzi","CUP_hgun_MicroUzi","CUP_muzzle_snds_MicroUzi","launch_B_Titan_short_F","launch_Titan_F","launch_RPG32_F","launch_NLAW_F"];
+_crate4_item_list	= ["Laserdesignator","H_HelmetO_ViperSP_hex_F","H_HelmetO_ViperSP_ghex_F","I_UAV_01_backpack_F","RPG32_HE_F","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","NLAW_F","Titan_AT","Titan_AP","Titan_AA","RPG32_F","RPG32_HE_F","Exile_SafeKit","Exile_CodeLock","optic_Nightstalker","optic_TWS"];
+
+
+/////////////////////////////////////////////
+// Mission Difficulty and Loot level setups
+/////////////////////////////////////////////
 
 switch (_difficultyM) do
 {
@@ -133,28 +178,10 @@ _crate_backpacks4	= (1 + (round (random 1)));
 	};
 };
 
-// Define the armed roaming vehicle options
-_ai_vehicle_list = 
-[
-	"CUP_B_LR_Special_CZ_W",
-	"CUP_B_HMMWV_Crows_MK19_USA",
-	"CUP_O_GAZ_Vodnik_BPPU_RU",
-	"CUP_B_HMMWV_M2_GPK_USA",
-	"CUP_B_HMMWV_DSHKM_GPK_ACR",
-	"CUP_B_HMMWV_Crows_MK19_USA",
-	"CUP_O_GAZ_Vodnik_BPPU_RU",
-	"CUP_B_HMMWV_M2_GPK_USA",
-	"CUP_B_HMMWV_DSHKM_GPK_ACR",
-	"Exile_Car_Offroad_Armed_Guerilla01",
-	"Exile_Car_SUV_Armed_Black",
-	"O_MRAP_02_hmg_F",
-	"O_MRAP_02_hmg_F",
-	"B_MRAP_01_hmg_F",
-	"I_MRAP_03_hmg_F",
-	"O_APC_Wheeled_02_rcws_F",
-	"I_APC_Wheeled_03_cannon_F",
-	"B_APC_Wheeled_01_cannon_F"
-];
+
+////////////////////////////////////////////////////////////////////////////
+// Mission Creation Section - Don't touch the below unless you know what you're doing.
+////////////////////////////////////////////////////////////////////////////
 
 // Define spawn locations for AI Soldiers. These will be used for the initial spawning of AI as well as reinforcements.
 // The center spawn location is added 3 times so at least 3 AI will spawn initially at the center location, and so that future reinforcements are more likely to spawn at the center.
@@ -173,7 +200,6 @@ _AISoldierSpawnLocations =
 	[6437.4,14148.6,0],
 	[6573.3,14221.5,0]
 ];
-
 _group =
 [
 	_AISoldierSpawnLocations,			// Pass the regular spawn locations as well as the center pos 3x
@@ -216,7 +242,7 @@ _veh =
 	"random",
 	_difficulty,
 	_side,
-	_ai_vehicle_0	//Classname of the vehicle we want to spawn, use "random" if you don't care and want DMS to select something.
+	_ai_vehicle_0	//Classname of the vehicle we want to spawn, use "random" if you just want one of the default DMS armed vehicles.
 ] call DMS_fnc_SpawnAIVehicle;
 
 // This is the second AI Vehicle, randomly selected from the above array; _ai_vehicle_list.
@@ -231,10 +257,11 @@ _veh1 =
 	"random",
 	_difficulty,
 	_side,
-	_ai_vehicle_1	//Classname of the vehicle we want to spawn, use "random" if you don't care and want DMS to select something.
+	_ai_vehicle_1	//Classname of the vehicle we want to spawn, use "random" if you just want one of the default DMS armed vehicles.
 ] call DMS_fnc_SpawnAIVehicle;
 
 // Define the classnames and locations where the crates can spawn (at least 5, since we're spawning 5 crates), crate 4 contains high end gear so has random spawn location to make it harder to find :)
+// Crate 4 has high end items so to make it more interesting, this has a random component to it. The list below sets the possible locations.
 _crate4_position_list = 
 [
 	[6473.7334,14203.063,0],
@@ -260,8 +287,8 @@ _crateClasses_and_Positions =
 	deleteVehicle (nearestObject _x);		// Make sure to remove any previous crates.
 } forEach _crateClasses_and_Positions;
 
-// Shuffle the list
-_crateClasses_and_Positions = _crateClasses_and_Positions call ExileClient_util_array_shuffle;
+// Shuffle the list (I've disabled this as I don't feel it fits the mission, if you want playets to not know which crate has medical or snipers etc. then re-enable this)
+// _crateClasses_and_Positions = _crateClasses_and_Positions call ExileClient_util_array_shuffle;
 
 // Create Crates
 _crate0 = [_crateClasses_and_Positions select 0 select 1, _crateClasses_and_Positions select 0 select 0] call DMS_fnc_SpawnCrate;	// Contents - General
@@ -269,13 +296,6 @@ _crate1 = [_crateClasses_and_Positions select 1 select 1, _crateClasses_and_Posi
 _crate2 = [_crateClasses_and_Positions select 2 select 1, _crateClasses_and_Positions select 2 select 0] call DMS_fnc_SpawnCrate;	// Contents - Building Supplies
 _crate3 = [_crateClasses_and_Positions select 3 select 1, _crateClasses_and_Positions select 3 select 0] call DMS_fnc_SpawnCrate;	// Contents - Medical
 _crate4 = [_crateClasses_and_Positions select 4 select 1, _crateClasses_and_Positions select 4 select 0] call DMS_fnc_SpawnCrate;	// Contents - Special
-
-// Define the Speciality Crate Item Lists
-_crate1_weapon_list	= ["CUP_srifle_M110","CUP_srifle_AWM_wdl","CUP_srifle_M107_Base","srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_LRR_camo_F"];
-_crate1_item_list	= ["CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_10Rnd_127x99_m107","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110"];
-_crate3_Item_List	= ["Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin"];
-_crate4_weapon_list	= ["CUP_hgun_MicroUzi","CUP_hgun_MicroUzi","CUP_muzzle_snds_MicroUzi","launch_B_Titan_short_F","launch_Titan_F","launch_RPG32_F","launch_NLAW_F"];
-_crate4_item_list	= ["Laserdesignator","H_HelmetO_ViperSP_hex_F","H_HelmetO_ViperSP_ghex_F","I_UAV_01_backpack_F","RPG32_HE_F","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","NLAW_F","Titan_AT","Titan_AP","Titan_AA","RPG32_F","RPG32_HE_F","Exile_SafeKit","Exile_CodeLock","optic_Nightstalker","optic_TWS"];
 
 // Enable smoke on the crates due to size of area
 {
@@ -354,21 +374,21 @@ _crate_loot_values4 =		// This is the medical crate
 _missionObjs =
 [
 	_staticGuns+[_veh]+[_veh1],			// static gun(s) & AI Vehicles. Note, we don't add the base itself because it already spawns on server start.
-	[],							// no vehicle prize, they can capture the AI vehicles on originating server
+	[],							// no vehicle prize, they can capture the AI vehicles on originating server and there's HEAPS of loot here.....
 	[[_crate0,_crate_loot_values0],[_crate1,_crate_loot_values1],[_crate2,_crate_loot_values2],[_crate3,_crate_loot_values3],[_crate4,_crate_loot_values4]]
 ];
 
 // Define Mission Start message
-_msgStart = ['#FFFF00',format["A large group of CDF Specops have built a base and are drinking beer and eating cake",_difficultyM]];
+_msgStart = ['#FFFF00',format["A large group of CDF Specops have built a base and are awaiting your arrival.....",_difficultyM]];
 
 // Define Mission Win message
-_msgWIN = ['#0080ff',"Convicts have successfully killed the CDF Specops and claimed all the cake and beer for themselves!"];
+_msgWIN = ['#0080ff',"Convicts have successfully killed the CDF Specops and claimed all the loot for themselves!"];
 
 // Define Mission Lose message
-_msgLOSE = ['#FF0000',"The CDF Specops have finished their beer and cake and buggered off..."];
+_msgLOSE = ['#FF0000',"The CDF Specops have finished their beers and buggered off..."];
 
 // Define mission name (for map marker and logging)
-_missionName = "AI Base";
+_missionName = "CDF Specops Base";
 
 // Create Markers
 _markers =
