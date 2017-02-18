@@ -5,8 +5,6 @@ This is a large AI base objects &amp; static DMS mission in the north of Chernar
 This mission was created for a militarised server and has 2 roaming vehicles with the possibility of a Gorgon or armed Ifrit/Hunter/Strider. The AI vehicles that can be used by the mission are editable in an array at the top of the mission config.
 Easy difficulty is configured for testing purposes and not intended for server deployment as it only has a small number of AI and a lot of loot. Medium difficulty is intended for small groups of 2-3, difficult for groups of 4 and hardcore as 5+ or just some very persistent smaller groups.
 
-## This mission file is configured with equipment from CUP Weapons and CUP Vehicles. If you are not using these mods, check the optional install instructions below.
-
 5 loot crates are configured;
 
 1. General items
@@ -27,6 +25,7 @@ Crates 1 and 3 utilise the DMS lists for general items and building items. Crate
 
 Enjoy a new static mission for Chernarus!
 
-# Optional Install Instructions - Read this if you don't use CUP Weapons and/or CUP Vehicles.
-1. If you do not have CUP Vehicles installed on your server, locate "ai_vehicle_list = " in AI_Base_Chernarus.sqf and delete the lines in that array that have the prefix "CUP".
-2. If you do not have CUP Weapons installed on your server, locate the "_crate1_weapon_list", "_crate1_item_list" and "_crate4_weapon_list" sections and remove any weapons that are prefixed with "CUP".
+# Optional Install Instructions
+These 2 lines provide some preconfigured CUP vehicles and weapons for the mission file if you use those mods on your server.
+1. If you have CUP Weapons, uncomment the "#define USE_CUP_WEAPONS = 1" line
+2. If you have CUP Vehicles, uncomment the "#define USE_CUP_VEHICLES = 1" line
