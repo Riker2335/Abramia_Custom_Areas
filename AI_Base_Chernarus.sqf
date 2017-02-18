@@ -8,9 +8,9 @@
 	The mission also has 2 roaming AI vehicles that do not use the standard DMS mission armed vehicles list, this allows for the selection of much harder vehicles for this mission if you wish.
 */
 
-/////////////////////////////////////////////
+/////////////////////////////////////////
 // Variable Declarations & Array configs
-/////////////////////////////////////////////
+/////////////////////////////////////////
 private ["_pos", "_AICount", "_AIMaxReinforcements", "_AItrigger", "_AIwave", "_AIdelay", "_staticguns", "_missionObjs", "_crate0", "_crate1", "_crate2", "_crate3", "_crate4", "_crate_loot_values0", "_crate_loot_values1", "_crate_loot_values2", "_crate_loot_values3", "_crate_loot_values4", "_crate_weapons0", "_crate_weapons1", "_crate_weapons2", "_crate_weapons3", "_crate_weapons4", "_crate_items0", "_crate_items1", "_crate_items2", "_crate_items3", "_crate_items4", "_crate_backpacks0", "_crate_backpacks1", "_crate_backpacks2", "_crate_backpacks3", "_crate_backpacks4", "_difficultyM", "_difficulty", "_PossibleDifficulty", "_msgWIN", "_veh", "_veh1", "_veh2", "_crate1_item_list", "_crate1_weapon_list", "_crate3_Item_List", "_crate4_item_list", "_ai_vehicle_list", "_ai_vehicle_0", "_ai_vehicle_1", "_crate4_position_list", "_crate4_position"];
 
 // For logging purposes
@@ -24,9 +24,14 @@ _pos = [6571,14167,0];
 
 if ([_pos,DMS_StaticMinPlayerDistance] call DMS_fnc_IsPlayerNearby) exitWith {"delay"};
 
+// Uncomment the line below if you want to use CUP Weapons in the crates or CUP vehicles in the AI vehicles
+// #define USE_CUP_WEAPONS = 1
+// #define USE_CUP_VEHICLES = 1
+
 // Armed Roaming Vehicle Options for DMS to choose from (this is an override to allow you to specify harder vehicles and includes things like armed Striders and Gorgons by default)
 _ai_vehicle_list = 
 [
+	#ifdef USE_CUP_VEHICLES
 	"CUP_B_LR_Special_CZ_W",
 	"CUP_B_HMMWV_Crows_MK19_USA",
 	"CUP_O_GAZ_Vodnik_BPPU_RU",
@@ -36,6 +41,7 @@ _ai_vehicle_list =
 	"CUP_O_GAZ_Vodnik_BPPU_RU",
 	"CUP_B_HMMWV_M2_GPK_USA",
 	"CUP_B_HMMWV_DSHKM_GPK_ACR",
+	#endif
 	"Exile_Car_Offroad_Armed_Guerilla01",
 	"Exile_Car_SUV_Armed_Black",
 	"O_MRAP_02_hmg_F",
@@ -66,11 +72,11 @@ _difficultyM = selectRandom _PossibleDifficulty;
 // Crate 1 is intended to be Sniper Rifles, Crate 3 is the one in the medical area and Crate 4 is the randomly placed one so was intended to have specialty gear in it.
 // Note that these arrays are just there as a possible list of items, the mission picks a random selection from these lists each time.
 
-_crate1_weapon_list	= ["CUP_srifle_M110","CUP_srifle_AWM_wdl","CUP_srifle_M107_Base","srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_LRR_camo_F"];
-_crate1_item_list	= ["CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_10Rnd_127x99_m107","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110"];
+_crate1_weapon_list	= [#ifdef USE_CUP_WEAPONS "CUP_srifle_M110","CUP_srifle_AWM_wdl","CUP_srifle_M107_Base", #endif "srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_LRR_camo_F"];
+_crate1_item_list	= [#ifdef USE_CUP_WEAPONS "CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_10Rnd_127x99_m107","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110","CUP_20Rnd_TE1_Green_Tracer_762x51_M110",#endif "10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","100Rnd_65x39_caseless_mag","10Rnd_127x54_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag"];
 _crate3_Item_List	= ["Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin"];
-_crate4_weapon_list	= ["CUP_hgun_MicroUzi","CUP_hgun_MicroUzi","CUP_muzzle_snds_MicroUzi","launch_B_Titan_short_F","launch_Titan_F","launch_RPG32_F","launch_NLAW_F"];
-_crate4_item_list	= ["Laserdesignator","H_HelmetO_ViperSP_hex_F","H_HelmetO_ViperSP_ghex_F","I_UAV_01_backpack_F","RPG32_HE_F","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","NLAW_F","Titan_AT","Titan_AP","Titan_AA","RPG32_F","RPG32_HE_F","Exile_SafeKit","Exile_CodeLock","optic_Nightstalker","optic_TWS"];
+_crate4_weapon_list	= [#ifdef USE_CUP_WEAPONS "CUP_hgun_MicroUzi","CUP_hgun_MicroUzi","CUP_muzzle_snds_MicroUzi",#endif "launch_B_Titan_short_F","launch_Titan_F","launch_RPG32_F","launch_NLAW_F"];
+_crate4_item_list	= [#ifdef USE_CUP_WEAPONS "CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI","CUP_30Rnd_9x19_UZI",#endif "Laserdesignator","H_HelmetO_ViperSP_hex_F","H_HelmetO_ViperSP_ghex_F","I_UAV_01_backpack_F","RPG32_HE_F","NLAW_F","Titan_AT","Titan_AP","Titan_AA","RPG32_F","RPG32_HE_F","Exile_SafeKit","Exile_CodeLock","optic_Nightstalker","optic_TWS"];
 
 
 /////////////////////////////////////////////
