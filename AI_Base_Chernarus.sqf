@@ -25,8 +25,8 @@ _pos = [6571,14167,0];
 if ([_pos,DMS_StaticMinPlayerDistance] call DMS_fnc_IsPlayerNearby) exitWith {"delay"};
 
 // Uncomment the line below if you want to use CUP Weapons in the crates or CUP vehicles in the AI vehicles
-#define USE_CUP_WEAPONS 1
-#define USE_CUP_VEHICLES 1
+//#define USE_CUP_WEAPONS 1
+//#define USE_CUP_VEHICLES 1
 
 // Armed Roaming Vehicle Options for DMS to choose from (this is an override to allow you to specify harder vehicles and includes things like armed Striders and Gorgons by default)
 _ai_vehicle_list = 
