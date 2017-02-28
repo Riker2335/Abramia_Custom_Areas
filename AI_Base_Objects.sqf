@@ -1,5 +1,5 @@
 /**
- * Created with Exile Mod 3DEN Plugin
+ * Created by Riker with Exile Mod 3DEN Plugin for the DMS Static Mission AI Base Chernarus.
  * www.exilemod.com
  */
 
