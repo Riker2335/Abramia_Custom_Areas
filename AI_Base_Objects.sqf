@@ -1,12 +1,17 @@
+/////////////////////////////////////////////////////////////////
+// Northern CDF Specops Base
+// Created by Riker for use with DMS Mission "AI Base Chernarus" but can be used simply as a point of interest on a server.
+// Has been built with "Open Chernarus Project" and requires resources from this mod to function. If you don't have it, buildings will be missing.
+/////////////////////////////////////////////////////////////////
 /**
  * Created by Riker with Exile Mod 3DEN Plugin for the DMS Static Mission AI Base Chernarus.
  * www.exilemod.com
  */
-
+ 
 ExileRouletteChairs = [];
 ExileRouletteChairPositions = [];
 
-// 974 Vehicles
+// 972 Vehicles
 private _vehicles = [
 ["Land_BagBunker_Tower_F", [6727.5, 14182.6, 333.389], [-0.99834, 0.0575887, 0], [0, 0, 1], true],
 ["Land_CncBarrier_F", [6729.47, 14166.9, 332.138], [0.998973, -0.000654282, 0.0453119], [-0.0452855, 0.0226396, 0.998717], true],
@@ -970,8 +975,6 @@ private _vehicles = [
 ["Land_LampHarbour_F", [6762.57, 14264.6, 330.281], [-0.999638, -0.0269123, 0], [0, 0, 1], true],
 ["Land_LampHarbour_F", [6736.76, 14263.9, 329.832], [0.996044, -0.0888663, 0], [0, 0, 1], true],
 ["Land_LampHarbour_F", [6370.45, 14129.5, 331.704], [0, 1, 0], [0, 0, 1], true],
-["Land_LampAirport_F_Preview", [6415.71, 14174.3, 339.35], [0, 0.999253, -0.0386349], [0.00133688, 0.0386349, 0.999252], true],
-["Land_LampAirport_F_Preview", [6408.92, 14127, 341.22], [0, 0.999201, -0.03997], [0.00133688, 0.03997, 0.9992], true],
 ["Land_LampAirport_F_Preview", [6562.31, 14113.8, 341.46], [0, 0.999872, -0.015994], [0.00665928, 0.0159936, 0.99985], true],
 ["Land_LampAirport_F_Preview", [6639.18, 14114.1, 342.225], [0, 0.999992, 0.00399666], [-0.0253251, -0.00399538, 0.999671], true],
 ["Land_Cargo40_china_color_V1_ruins_F", [6390.71, 14063.7, 331.646], [0.873752, -0.486373, 0], [0, 0, 1], true],
