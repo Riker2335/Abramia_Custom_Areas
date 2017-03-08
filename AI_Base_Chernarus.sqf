@@ -1,5 +1,5 @@
 /*
-	"Ai Base" v1.0 DMS static mission for Chernarus.
+	"Ai Base" v1.1 DMS static mission for Chernarus.
 	Created by Riker using templates by eraser1 with mission code layout and features inspired by mission files from [CiC]red_ned. Thanks guys!
 	
 	This is intended to be a mission completed by a team of 3+ on a militarised server and has great rewards for completing it that are highly customisable, especially at the high end.
@@ -11,7 +11,7 @@
 ////////////////////////////////////////////////
 // Variable Declarations & Array configs
 ////////////////////////////////////////////////
-private ["_pos", "_AICount", "_AIMaxReinforcements", "_AItrigger", "_AIwave", "_AIdelay", "_staticguns", "_missionObjs", "_crate0", "_crate1", "_crate2", "_crate3", "_crate4", "_crate_loot_values0", "_crate_loot_values1", "_crate_loot_values2", "_crate_loot_values3", "_crate_loot_values4", "_crate_weapons0", "_crate_weapons1", "_crate_weapons2", "_crate_weapons3", "_crate_weapons4", "_crate_items0", "_crate_items1", "_crate_items2", "_crate_items3", "_crate_items4", "_crate_backpacks0", "_crate_backpacks1", "_crate_backpacks2", "_crate_backpacks3", "_crate_backpacks4", "_difficultyM", "_difficulty", "_PossibleDifficulty", "_msgWIN", "_veh", "_veh1", "_veh2", "_crate1_item_list", "_crate1_weapon_list", "_crate3_Item_List", "_crate4_item_list", "_ai_vehicle_list", "_ai_vehicle_0", "_ai_vehicle_1", "_crate4_position_list", "_crate4_position"];
+private ["_pos", "_AICount", "_AIMaxReinforcements", "_AItrigger", "_AIwave", "_AIdelay", "_staticguns", "_missionObjs", "_crate0", "_crate1", "_crate2", "_crate3", "_crate4", "_crate_loot_values0", "_crate_loot_values1", "_crate_loot_values2", "_crate_loot_values3", "_crate_loot_values4", "_crate_weapons0", "_crate_weapons1", "_crate_weapons2", "_crate_weapons3", "_crate_weapons4", "_crate_items0", "_crate_items1", "_crate_items2", "_crate_items3", "_crate_items4", "_crate_backpacks0", "_crate_backpacks1", "_crate_backpacks2", "_crate_backpacks3", "_crate_backpacks4", "_crate_cash4", "_difficultyM", "_difficulty", "_PossibleDifficulty", "_msgWIN", "_veh", "_veh1", "_veh2", "_crate1_item_list", "_crate1_weapon_list", "_crate3_Item_List", "_crate4_item_list", "_ai_vehicle_list", "_ai_vehicle_0", "_ai_vehicle_1", "_crate4_position_list", "_crate4_position"];
 
 // For logging purposes
 _num = DMS_MissionCount;
@@ -24,9 +24,9 @@ _pos = [6571,14167,0];
 
 if ([_pos,DMS_StaticMinPlayerDistance] call DMS_fnc_IsPlayerNearby) exitWith {"delay"};
 
-// Uncomment the line below if you want to use CUP Weapons in the crates or CUP vehicles in the AI vehicles
-//#define USE_CUP_WEAPONS 1
-//#define USE_CUP_VEHICLES 1
+// Uncomment the lines below if you want to use CUP Weapons in the crates or CUP vehicles in the AI vehicles
+#define USE_CUP_WEAPONS 1
+#define USE_CUP_VEHICLES 1
 
 // Armed Roaming Vehicle Options for DMS to choose from (this is an override to allow you to specify harder vehicles and includes things like armed Striders and Gorgons by default)
 _ai_vehicle_list = 
@@ -58,6 +58,8 @@ _PossibleDifficulty		= 	[
 								"moderate",
 								"moderate",
 								"moderate",
+								"difficult",
+								"difficult",
 								"difficult"
 								//"difficult",
 								//"hardcore"
@@ -183,11 +185,11 @@ switch (_difficultyM) do
 	case "easy":	//Used for TESTING purposes only, this is WAY too easy and has too much loot.
 	{
 _difficulty = "easy";									//AI difficulty
-_AICount = (3 + (round (random 5)));					//AI starting numbers
-_AIMaxReinforcements = (10 + (round (random 5)));		//AI reinforcement cap
-_AItrigger = (2 + (round (random 2)));					//If AI numbers fall below this number then reinforce if any left from AIMax
-_AIwave = (4 + (round (random 4)));						//Max amount of AI in reinforcement wave
-_AIdelay = (55 + (round (random 120)));					//The delay between reinforcements
+_AICount = (2 + (round (random 1)));					//AI starting numbers
+_AIMaxReinforcements = (1 + (round (random 1)));		//AI reinforcement cap
+_AItrigger = (1 + (round (random 1)));					//If AI numbers fall below this number then reinforce if any left from AIMax
+_AIwave = (1 + (round (random 1)));						//Max amount of AI in reinforcement wave
+_AIdelay = (10 + (round (random 1)));					//The delay between reinforcements
 _crate_weapons0 	= (50 + (round (random 20)));		//Crate 0 weapons number (General weapons)
 _crate_items0 		= (5 + (round (random 20)));		//Crate 0 items number
 _crate_backpacks0 	= (3 + (round (random 1)));			//Crate 0 back packs number
@@ -203,6 +205,7 @@ _crate_backpacks3	= (1 + (round (random 1)));
 _crate_weapons4		= (10 + (round (random 1)));		// Crate 4 = Special items
 _crate_items4	 	= (30 + (round (random 10)));
 _crate_backpacks4	= (1 + (round (random 1)));
+_crate_cash4		= (10000 + (round (random 10000))); // Crate 4 Cash
 	};
 	case "moderate":
 	{
@@ -227,6 +230,7 @@ _crate_backpacks3	= (1 + (round (random 1)));
 _crate_weapons4		= (4 + (round (random 1)));			// Crate 4 = Special items
 _crate_items4	 	= (10 + (round (random 10)));
 _crate_backpacks4	= (1 + (round (random 1)));
+_crate_cash4		= (5000 + (round (random 5000))); // Crate 4 Cash
 	};
 	case "difficult":
 	{
@@ -251,6 +255,7 @@ _crate_backpacks3	= (1 + (round (random 1)));
 _crate_weapons4		= (6 + (round (random 2)));			// Crate 4 = Special items
 _crate_items4	 	= (15 + (round (random 10)));
 _crate_backpacks4	= (1 + (round (random 1)));
+_crate_cash4		= (7000 + (round (random 5000))); // Crate 4 Cash
 	};
 	//case "hardcore":
 	default
@@ -276,6 +281,7 @@ _crate_backpacks3	= (1 + (round (random 1)));
 _crate_weapons4		= (8 + (round (random 4)));			// Crate 4 = Special items
 _crate_items4	 	= (20 + (round (random 10)));		
 _crate_backpacks4	= (1 + (round (random 1)));
+_crate_cash4		= (10000 + (round (random 5000))); // Crate 4 Cash
 	};
 };
 
@@ -465,12 +471,14 @@ _crate_loot_values3 =		// This is the medical crate
 	[_crate_items3,_Crate3_Item_List],			// Set in difficulty select - Items, the item list is from an array below the difficulty selection.
 	_crate_backpacks3 		// Set in difficulty select - Backpacks
 ];
-_crate_loot_values4 =		// This is the medical crate
+_crate_loot_values4 =		// This is the Special Items crate
 [
 	[_crate_weapons4,_crate4_weapon_list],		// Set in difficulty select - Weapons
 	[_crate_items4,_crate4_item_List],			// Set in difficulty select - Items, the item list is from an array below the difficulty selection.
 	_crate_backpacks4 		// Set in difficulty select - Backpacks
 ];
+_crate4 setVariable ["ExileMoney",_crate_cash4,true]; //Adds poptabs to the box/container/crate referred to as "_crate4" using the variable declared in the difficulty levels section.
+
 // Define mission-spawned objects and loot values with vehicle
 _missionObjs =
 [
