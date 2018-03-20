@@ -1,0 +1,1867 @@
+// Isla Abramia Bridge connecting Rybak on the main island to the southeast island. Compatible with v3.9
+// Created by Riker2335 for a private Exile server and released on the Exile forums for all to use
+
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=100;
+	autoGroupingDist=10;
+	toggles=513;
+	class ItemIDProvider
+	{
+		nextID=2992;
+	};
+	class MarkerIDProvider
+	{
+		nextID=2;
+	};
+	class LayerIndexProvider
+	{
+		nextID=462;
+	};
+	class Camera
+	{
+		pos[]={6866.0747,148.13074,828.68506};
+		dir[]={0.43616271,-0.54075617,0.71934032};
+		up[]={0.2803773,0.8411563,0.46241218};
+		aside[]={0.85513169,1.6603735e-008,-0.51849812};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"CUP_Editor_A2_Roads_Config",
+	"A3_Structures_F_Exp_Walls_Crashbarriers",
+	"CUP_Editor_Signs_Config",
+	"A3_Structures_F_Civ_Lamps"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=4;
+		class Item0
+		{
+			className="CUP_Editor_A2_Roads_Config";
+			name="CUP_Editor_A2_Roads_Config";
+		};
+		class Item1
+		{
+			className="A3_Structures_F_Exp";
+			name="Arma 3 Apex - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="CUP_Editor_Signs_Config";
+			name="CUP_Editor_Signs_Config";
+		};
+		class Item3
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=3243175;
+class ScenarioData
+{
+	author="-=Riker=-";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.44999999;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2016;
+		month=11;
+		day=29;
+		hour=2;
+		minute=-6;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=1;
+		class Item0
+		{
+			dataType="Layer";
+			name="THE Bridge";
+			class Entities
+			{
+				items=103;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6261.7119,10.422607,3016.741};
+						angles[]={0,2.0833657,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1621;
+					type="CUP_A2_Road_asf1_0_2000";
+					atlOffset=0.3746624;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6234.4185,11.972236,3025.3411};
+						angles[]={0,1.7565712,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1632;
+					type="CUP_A2_Road_asf1_0_2000";
+					atlOffset=0.35620689;
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6249.5142,10.911953,3022.0933};
+						angles[]={6.2671833,1.7406502,6.245204};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1630;
+					type="CUP_A2_Road_asf1_10_75";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6222.877,12.321965,3027.5679};
+						angles[]={0.041975394,1.7544303,6.2033553};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1635;
+					type="CUP_A2_Road_asf1_6konec";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6277.9233,1.1923733,3007.406};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1619;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=1.6723704;
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6299.5117,1.1863451,2995.0251};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1622;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=8.6428261;
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6321.2061,1.1934309,2982.6167};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1623;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=13.335246;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6342.7944,1.1811409,2970.2358};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1624;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=18.47171;
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6364.46,1.1972065,2957.7688};
+						angles[]={0,2.0920715,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1639;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=24.105375;
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6386.0483,1.20436,2945.3879};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1640;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=25.102116;
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6407.7427,1.2061996,2932.9795};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1641;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=19.579002;
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6429.3311,1.2207527,2920.5986};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1642;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=20.100832;
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6451.0029,1.211215,2908.1558};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1646;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=29.144577;
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6472.5913,1.2059937,2895.7749};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1647;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=42.061325;
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6494.2856,1.2017632,2883.3665};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1648;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=54.316574;
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6515.874,1.1980057,2870.9856};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1649;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=62.8153;
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6537.5396,1.2009792,2858.5186};
+						angles[]={0,2.0920715,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1650;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=64.050354;
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6559.1279,1.1972084,2846.1377};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1651;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=64.673004;
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6580.8223,1.1858025,2833.7292};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1652;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.138809;
+				};
+				class Item19
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6602.4106,1.1869259,2821.3484};
+						angles[]={0,2.0920718,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1653;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.446716;
+				};
+				class Item20
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6623.686,1.1900578,2808.6292};
+						angles[]={0,2.1259511,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1654;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.765785;
+				};
+				class Item21
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6643.959,1.1964436,2795.3301};
+						angles[]={0,2.1696806,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1655;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.869614;
+				};
+				class Item22
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6664.1963,1.200161,2781.1287};
+						angles[]={0,2.1951354,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1656;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.961655;
+				};
+				class Item23
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6683.8125,1.2138596,2766.3064};
+						angles[]={0,2.2408383,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1657;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=66.061111;
+				};
+				class Item24
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6702.8135,1.1998272,2750.7961};
+						angles[]={0,2.2697632,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1658;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=66.051323;
+				};
+				class Item25
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6721.5264,1.1908989,2734.6157};
+						angles[]={0,2.2984996,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1659;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=66.158974;
+				};
+				class Item26
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6739.6455,1.1902781,2718.0208};
+						angles[]={0,2.3275211,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1660;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=67.314529;
+				};
+				class Item27
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6757.2349,1.1858082,2700.9341};
+						angles[]={0,2.3532727,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1661;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=66.872131;
+				};
+				class Item28
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6774.2349,1.1662388,2683.2117};
+						angles[]={0,2.4100671,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1662;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=66.093552;
+				};
+				class Item29
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6790.4771,1.1701355,2664.5427};
+						angles[]={0,2.4314361,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1663;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.90686;
+				};
+				class Item30
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6806.4229,1.1758194,2645.5525};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1664;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.78273;
+				};
+				class Item31
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6822.2144,1.1590595,2626.1819};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1679;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.691696;
+				};
+				class Item32
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6837.9917,1.169981,2606.8013};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1680;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.639099;
+				};
+				class Item33
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6853.7632,1.1532078,2587.4556};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1681;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.634842;
+				};
+				class Item34
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6869.4937,1.1740932,2568.0632};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1682;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.723564;
+				};
+				class Item35
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6885.2729,1.1812048,2548.6763};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1683;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.692703;
+				};
+				class Item36
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6901.0791,1.1999531,2529.3081};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1684;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.732666;
+				};
+				class Item37
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6916.8384,1.2041817,2509.9392};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1685;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.721214;
+				};
+				class Item38
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6932.6284,1.1991501,2490.564};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1686;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.687363;
+				};
+				class Item39
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6948.3726,1.1949577,2471.2446};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1687;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.56469;
+				};
+				class Item40
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6964.1401,1.2091961,2451.8525};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1688;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.673279;
+				};
+				class Item41
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6269.063,10.032005,3020.7251};
+						angles[]={0,0.5449267,6.1959186};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1693;
+					type="Land_CrashBarrier_01_4m_F";
+					atlOffset=0.069999695;
+				};
+				class Item42
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6265.6289,10.318058,3022.792};
+						angles[]={0,0.5449267,6.1959186};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1694;
+					type="Land_CrashBarrier_01_4m_F";
+				};
+				class Item43
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6266.3291,10.391472,3025.9509};
+						angles[]={0,3.0692487,6.2308254};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1696;
+					type="Land_CrashBarrier_01_4m_F";
+				};
+				class Item44
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6270.2349,10.194148,3026.241};
+						angles[]={0,3.0692487,6.2308254};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1699;
+					type="Land_CrashBarrier_01_4m_F";
+					atlOffset=-0.029999733;
+				};
+				class Item45
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6274.1128,10.09516,3027.2749};
+						angles[]={0,2.6846828,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1700;
+					type="Land_CrashBarrier_01_4m_F";
+					atlOffset=0.029999733;
+				};
+				class Item46
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6277.6309,10.110673,3029.1919};
+						angles[]={0,2.6110997,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1701;
+					type="Land_CrashBarrier_01_4m_F";
+					atlOffset=0.12000179;
+				};
+				class Item47
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6263.0518,10.532572,3024.2981};
+						angles[]={0,0.53096408,6.1959186};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1698;
+					type="Land_CrashBarrier_01_end_L_F";
+					atlOffset=-9.5367432e-007;
+				};
+				class Item48
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6280.1841,10.104945,3030.7561};
+						angles[]={0,2.5505018,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1702;
+					type="Land_CrashBarrier_01_end_L_F";
+					atlOffset=0.14000034;
+				};
+				class Item49
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6263.333,10.534725,3025.7302};
+						angles[]={0,3.0762999,6.2308254};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1697;
+					type="Land_CrashBarrier_01_end_R_F";
+				};
+				class Item50
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6271.5791,9.8254538,3019.1689};
+						angles[]={0,0.54871404,6.1959186};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1703;
+					type="Land_CrashBarrier_01_end_R_F";
+					atlOffset=0.21000004;
+				};
+				class Item51
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6979.9033,1.2108326,2432.5068};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1705;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.682327;
+				};
+				class Item52
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6995.7065,1.2131195,2413.1296};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1706;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.58503;
+				};
+				class Item53
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7011.4932,1.2187614,2393.7502};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1707;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=65.352409;
+				};
+				class Item54
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7027.2671,1.2206879,2374.3975};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1708;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=64.78878;
+				};
+				class Item55
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7043.0498,1.2248726,2355.0251};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1709;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=63.756622;
+				};
+				class Item56
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7058.8481,1.2335873,2335.6489};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1710;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=62.141735;
+				};
+				class Item57
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7074.644,1.2321815,2316.2747};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1712;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=58.286903;
+				};
+				class Item58
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7090.4336,1.2480059,2296.9243};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1713;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=55.213566;
+				};
+				class Item59
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7106.2368,1.2517738,2277.553};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1714;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=54.075111;
+				};
+				class Item60
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7122.0439,1.2670593,2258.179};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1715;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=51.324669;
+				};
+				class Item61
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7137.8389,1.2637653,2238.7976};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1716;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=49.677776;
+				};
+				class Item62
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7153.6177,1.2701092,2219.4343};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1717;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=44.905956;
+				};
+				class Item63
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7169.394,1.2634277,2200.0693};
+						angles[]={0,2.4578834,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1718;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=42.033905;
+				};
+				class Item64
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7184.5601,1.2792797,2180.6685};
+						angles[]={0,2.4950447,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1719;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=36.411713;
+				};
+				class Item65
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7199.085,1.2757492,2160.7988};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1720;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=37.347939;
+				};
+				class Item66
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7213.5205,1.2616539,2140.4111};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1721;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=39.66016;
+				};
+				class Item67
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7227.9653,1.2559319,2120.0156};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1722;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=41.471085;
+				};
+				class Item68
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7242.3984,1.2530193,2099.6279};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1723;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=40.704273;
+				};
+				class Item69
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7256.8418,1.2507954,2079.2288};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1724;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=36.921429;
+				};
+				class Item70
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7271.2671,1.244997,2058.8523};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1725;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=39.392643;
+				};
+				class Item71
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7285.7139,1.2363358,2038.4664};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1726;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=41.023705;
+				};
+				class Item72
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7300.1553,1.2324352,2018.0762};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1727;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=39.160049;
+				};
+				class Item73
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7314.6084,1.2296143,1997.6924};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1728;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=36.556259;
+				};
+				class Item74
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7329.0513,1.2273483,1977.2933};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1729;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=33.693275;
+				};
+				class Item75
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7343.4946,1.2280884,1956.9};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1730;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=30.970654;
+				};
+				class Item76
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7357.9307,1.2312126,1936.519};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1731;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=26.798613;
+				};
+				class Item77
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7372.3784,1.2353306,1916.1296};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1732;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=20.336336;
+				};
+				class Item78
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7386.8213,1.2353096,1895.739};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1733;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=16.655954;
+				};
+				class Item79
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7401.208,1.2374992,1875.4203};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1734;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=16.912682;
+				};
+				class Item80
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7415.6436,1.2301979,1855.043};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1735;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=16.316399;
+				};
+				class Item81
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7430.0576,1.2324047,1834.7008};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1736;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=15.31304;
+				};
+				class Item82
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7444.4673,1.2283936,1814.3506};
+						angles[]={0,2.5254226,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1738;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=10.493671;
+				};
+				class Item83
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7458.916,1.2317085,1793.96};
+						angles[]={0,2.5254216,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1739;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=10.115197;
+				};
+				class Item84
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7473.6133,1.2286091,1774.109};
+						angles[]={0,2.4871581,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1740;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=9.7863159;
+				};
+				class Item85
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7488.9995,1.2284184,1754.7963};
+						angles[]={0,2.4508722,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1741;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=7.9057903;
+				};
+				class Item86
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7505.0625,1.2298241,1735.9568};
+						angles[]={0,2.4202559,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1742;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=2.3781128;
+				};
+				class Item87
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7521.5532,1.2302074,1717.2017};
+						angles[]={0,2.4202559,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1744;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=2.3517036;
+				};
+				class Item88
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7538.022,1.2307682,1698.4727};
+						angles[]={0,2.4202559,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1745;
+					type="CUP_A2_Road_bridge_asf1_25";
+					atlOffset=1.8874445;
+				};
+				class Item89
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7546.167,9.3874884,1689.5316};
+						angles[]={0.23365335,5.5042796,0.107583};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1747;
+					type="CUP_A2_Road_asf1_15_75";
+				};
+				class Item90
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7570.7305,13.884582,1672.6788};
+						angles[]={0.0039967569,4.800797,0.061919641};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1821;
+					type="CUP_A2_Road_asf1_15_75";
+				};
+				class Item91
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7555.5781,12.464489,1678.7125};
+						angles[]={0.1016485,5.0965886,0.091741994};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1823;
+					type="CUP_A2_Road_asf1_30_25";
+				};
+				class Item92
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7583.9673,14.529305,1670.2634};
+						angles[]={6.24121,4.8182893,0.041975394};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1820;
+					type="CUP_A2_Road_asf1_6konec";
+					atlOffset=0.021612167;
+				};
+				class Item93
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7594.3447,14.779723,1660.514};
+						angles[]={6.1342955,0,6.2751846};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1827;
+					type="CUP_sign_leftDirection_new";
+					atlOffset=-0.00034141541;
+				};
+				class Item94
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7596.4375,16.475094,1677.3195};
+						angles[]={6.261188,3.3351414,6.251195};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1830;
+					type="CUP_sign_rightDirection_new";
+					atlOffset=-0.00046825409;
+				};
+				class Item95
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7582.2129,16.451649,1678.0273};
+						angles[]={6.2651849,1.7252727,0.057935834};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1828;
+					type="CUP_sign_priority_new";
+					atlOffset=-9.5367432e-007;
+				};
+				class Item96
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7580.7598,15.420725,1663.0691};
+						angles[]={6.1617851,1.7252727,6.2531958};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=1829;
+					type="CUP_sign_priority_new";
+				};
+				class Item97
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7584.0786,17.950771,1677.8944};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1858;
+					type="Land_LampStreet_small_F";
+					atlOffset=-9.5367432e-007;
+				};
+				class Item98
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7582.9233,16.699862,1662.6469};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1859;
+					type="Land_LampStreet_small_F";
+					atlOffset=-9.5367432e-007;
+				};
+				class Item99
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7593.8906,16.644793,1663.0555};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1860;
+					type="Land_LampStreet_small_F";
+					atlOffset=0.035492897;
+				};
+				class Item100
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7595.0889,17.955944,1676.2137};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1861;
+					type="Land_LampStreet_small_F";
+					atlOffset=-9.5367432e-007;
+				};
+				class Item101
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6267.3003,13.241436,3024.3657};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1862;
+					type="Land_LampStreet_small_F";
+					atlOffset=2.3841858e-005;
+				};
+				class Item102
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6256.9951,13.096184,3010.0444};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1863;
+					type="Land_LampStreet_small_F";
+					atlOffset=-0.0064973831;
+				};
+			};
+			id=1645;
+			atlOffset=68.002838;
+		};
+	};
+};
