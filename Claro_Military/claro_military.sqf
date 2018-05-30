@@ -1,6 +1,6 @@
 *********************************************************************************************
 ** Military facility at OP Claro
-** Created in 2017 by Riker for my Exile Server
+** Created in 2017 by Riker for Druid's Exile Server
 ** Uploaded to Github in 2018 for general use on any server running Icebreakr's Isla Abramia
 *********************************************************************************************
 /**
