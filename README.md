@@ -15,6 +15,6 @@ Method 2 - Better if you want lots of areas
 3. Follow the instructions from point 7 for adding new sqf file(s) to the server
 
 # Mission files
-As I no longer operate an Abramia server, in case future changes are needed to these areas I've included the mission files with all the objects that can be opened in 3DEN. 
+In case future adjustments are needed to meet terrain changes or you just want to add/remove some stuff, I've included the mission files with all the objects that can be opened in 3DEN. 
 Simply create a folder like XXXX.abramia (change the X's out for something identifyable) in your MPMISSIONS folder where all other new mission files are created on your PC and paste the mission.sqm file in there. Just open it in 3DEN and you can adjust as needed.
 Please note that when I created these custom areas, I had all mods loaded that my server was using at the time. This included the map itself, CUP Core, Exile's client files and numerous custom mods such as CUP Weapons/Vehicles, Zombies and Demons, Z-Hunters, Extended Items Exile, Extended Base Mod and TRYK. Some of these may be required to edit these files but you SHOULD only need Abramia, CUP Core and the ARMA 3 DLC's.
