@@ -1,6 +1,7 @@
 /**
  * Created with Exile Mod 3DEN Plugin
  * www.exilemod.com
+ * Created by Riker2335 for use with Druid's Exile server and released on Github in 2018.
  */
 
 ExileRouletteChairs = [];
