@@ -1,3 +1,8 @@
+*********************************************************************************************
+** Military facility at OP Meek
+** Created in 2017 by Riker for Druid's Exile Server
+** Uploaded to Github in 2018 for general use on any server running Icebreakr's Isla Abramia
+*********************************************************************************************
 /**
  * Created with Exile Mod 3DEN Plugin
  * www.exilemod.com
